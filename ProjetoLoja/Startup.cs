@@ -33,6 +33,7 @@ namespace ProjetoLoja
 
             services.AddScoped<SeedingService>();
             services.AddScoped<ProdutosService>();
+            services.AddScoped<CategoriaService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
