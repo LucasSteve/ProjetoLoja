@@ -1,4 +1,5 @@
-﻿using ProjetoLoja.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoLoja.Data;
 using ProjetoLoja.Models;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace ProjetoLoja.Services
             _context = context;
         }
 
-        public List<Categoria> Findall()
+        public async Task<List<Categoria>> FindallAsync()
         {
-            return _context.Categoria.OrderBy(x => x.Nome).ToList();
+            return await _context.Categoria.OrderBy(x => x.Nome).ToListAsync();
         }
     }
 }
